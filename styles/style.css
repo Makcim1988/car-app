@@ -498,121 +498,118 @@ body {
     color: #030305;
 }
 
-@media screen and (max-width: 1225px) {
-  .main, .products, .order {
-    background: none;
-  }
+ @media (min-width: 576px) {
+            .main-title {
+                font-size: 50px;
+            }
+            
+            .sub-title {
+                font-size: 42px;
+            }
+            
+            .menu-item {
+                margin-right: 30px;
+            }
+        }
 
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+        @media (min-width: 768px) {
+            .header .container {
+                justify-content: flex-start;
+            }
+            
+            .menu {
+                margin-left: 40px;
+            }
+            
+            .menu-item {
+                margin-right: 50px;
+            }
+            
+            .main {
+                padding: 80px 0;
+            }
+            
+            .main-title {
+                font-size: 60px;
+            }
+            
+            .main-text {
+                max-width: 502px;
+            }
+            
+            .sub-title {
+                font-size: 50px;
+            }
+            
+            .price-form {
+                max-width: 344px;
+            }
+        }
 
-  .header .container {
-    flex-wrap: wrap;
-    max-width: 420px;
-    justify-content: center;
-  }
+        @media (min-width: 992px) {
+            .main {
+                padding: 104px 0 154px 0;
+            }
+            
+            .main-title {
+                font-size: 70px;
+            }
+            
+            .sub-title {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            
+            .menu {
+                margin-left: 244px;
+            }
+            
+            .menu-item {
+                margin-right: 115px;
+            }
+            
+            .price-image {
+                position: absolute;
+                bottom: 0;
+                left: 401px;
+                margin-top: 0;
+            }
+        }
 
-  .header .logo {
-    order: 1;
-  }
+        @media (min-width: 1200px) {
+            .main-title {
+                font-size: 80px;
+            }
+            
+            .container {
+                padding: 0;
+            }
+        }
 
-  .menu {
-    margin: 20px 0;
-    order: 3;
-    flex-basis: 100%;
-  }
-
-  .menu ul { /*там другой класс*/
-    justify-content: space-between;
-  }
-
-  .menu-item {
-    margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
-  }
-
-  .currency {
-    margin-left: 20px;
-    order: 2;
-  }
-
-  .main-image {
-    z-index: -1;
-    opacity: 0.4;
-  }
-
-  .why-items {
-    grid-template-columns: auto;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .products-items {
-    grid-template-columns: repeat(auto-fill, minmax(290px, 384px));
-    justify-content: center;
-  }
-
-  .products-item {
-    padding: 15px;
-  }
-
-  .products-item-image {
-    height: auto;
-  }
-
-  .order {
-    padding-bottom: 20px;
-  }
-
-  .order-image {
-    width: 800px;
-  }
-
-  .order-form {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 426px;
-    width: auto;
-    padding: 20px;
-  }
-
-  .order-form-input {
-    max-width: 100%;
-    width: auto;
-  }
-
-  .order-form-input input {
-    width: calc(100% - 2px);
-  }
-
-  .order-form-inputs .button {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 570px) {
-  .main-title {
-    font-size: 65px;
-    margin-top: 20px;
-  }
-
-  .common-title {
-    font-size: 36px;
-    line-height: 46px;
-  }
-
-  .footer .container {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .rights {
-    margin-top: 20px;
-  }
-}
+        /* Mobile menu for small screens */
+        @media (max-width: 767px) {
+            .header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .menu {
+                margin-left: 0;
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .menu ul {
+                justify-content: center;
+            }
+            
+            .menu-item {
+                margin: 0 10px 10px;
+            }
+            
+            .footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
 
