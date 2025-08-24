@@ -340,14 +340,25 @@ body {
     .car-items {
         justify-content: center !important;
         gap: 25px;
-        margin: 0 -10px;
+        margin: 0;
     }
     
     .car-item {
         flex: 0 0 calc(50% - 25px) !important;
         max-width: calc(50% - 25px) !important;
-        margin: 15px 10px !important;
+        margin: 15px 0 !important;
         box-sizing: border-box;
+        padding: 0 10px;
+    }
+    
+    .car-item-info {
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+    }
+    
+    .car-item-point {
+        width: 90px !important;
+        margin: 0 5px !important;
     }
     
     .price .container {
@@ -420,20 +431,30 @@ body {
     
     .car-item {
         flex: 0 0 100% !important;
-        max-width: 350px !important;
+        max-width: 100% !important;
         margin: 0 auto 20px !important;
+        padding: 0 15px;
     }
     
     .car-item-info {
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 5px;
     }
     
     .car-item-point {
-        flex: 0 0 calc(33.333% - 15px);
-        margin: 0 5px;
-        min-width: 90px;
+        width: 80px !important;
+        margin: 0 3px !important;
+        flex: none !important;
+    }
+    
+    .car-item-point img {
+        max-width: 25px;
+        margin-bottom: 8px;
+    }
+    
+    .car-item-point > div {
+        font-size: 12px;
     }
     
     .button {
@@ -451,7 +472,7 @@ body {
 
 @media (max-width: 576px) {
     .container {
-        padding: 0 12px;
+        padding: 0 10px;
     }
     
     .menu ul {
@@ -473,17 +494,30 @@ body {
     }
     
     .car-item {
-        max-width: 320px !important;
+        max-width: 100% !important;
         margin: 0 auto 15px !important;
+        padding: 0 5px;
+    }
+    
+    .car-item-info {
+        flex-wrap: wrap !important;
+        justify-content: space-around !important;
+        gap: 10px;
     }
     
     .car-item-point {
-        flex: 0 0 calc(50% - 10px) !important;
-        margin: 0 5px 10px !important;
+        flex: 0 0 calc(33.333% - 10px) !important;
+        width: auto !important;
+        margin: 0 !important;
+        min-width: 70px;
     }
     
     .car-item-point img {
-        max-width: 30px;
+        max-width: 22px;
+    }
+    
+    .car-item-point > div {
+        font-size: 11px;
     }
     
     .price .container {
@@ -491,9 +525,9 @@ body {
     }
     
     .price-input {
-        padding: 18px 15px;
-        height: 55px;
-        font-size: 15px;
+        padding: 16px 12px;
+        height: 50px;
+        font-size: 14px;
     }
 }
 
@@ -519,6 +553,15 @@ body {
         padding: 10px 0 12px;
     }
     
+    .car-item-point {
+        flex: 0 0 calc(33.333% - 5px) !important;
+        min-width: 60px;
+    }
+    
+    .car-item-point > div {
+        font-size: 10px;
+    }
+    
     .button {
         padding: 14px;
         font-size: 14px;
@@ -533,7 +576,7 @@ body {
     }
 }
 
-/* Гарантия правильного отображения */
+/* Гарантия правильного отображения карточек */
 .car .container {
     display: flex;
     flex-direction: column;
@@ -548,6 +591,17 @@ body {
     box-sizing: border-box;
 }
 
+.car-item {
+    box-sizing: border-box;
+}
+
+.car-item-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
 /* Исправления для десктопной версии */
 @media (min-width: 993px) {
     .car-items {
@@ -557,7 +611,10 @@ body {
     .car-item {
         flex: 0 0 calc(33.333% - 20px);
         max-width: calc(33.333% - 20px);
-        box-sizing: border-box;
+    }
+    
+    .car-item-info {
+        flex-wrap: nowrap;
     }
 }
 
@@ -567,34 +624,11 @@ img {
     height: auto;
 }
 
-/* Ограничение максимальной ширины для контента */
-.main-info,
-.price-form {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
 /* Предотвращение выхода за границы */
-.sub-title,
-.main-title {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+.car-item {
+    max-width: 100%;
 }
 
-/* Исправления для touch-устройств */
-@media (hover: none) {
-    .button:hover {
-        background: #030305;
-    }
-    
-    .menu-item a:hover {
-        border-bottom: none;
-    }
-    
-    .car-item-image:hover img {
-        transform: none;
-    }
-}
 
 
 
