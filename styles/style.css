@@ -296,6 +296,7 @@ body {
     .header .container {
         flex-direction: column;
         gap: 20px;
+        text-align: center;
     }
     
     .menu {
@@ -315,11 +316,11 @@ body {
     
     .main {
         padding: 80px 0;
-        text-align: center;
     }
     
     .main-info {
         margin: 0 auto;
+        text-align: center;
     }
     
     .main-text {
@@ -328,14 +329,14 @@ body {
     }
     
     .car-items {
-        justify-content: center;
+        justify-content: center !important;
         gap: 30px;
     }
     
     .car-item {
-        flex: 0 0 calc(50% - 30px);
-        max-width: calc(50% - 30px);
-        margin: 20px 0;
+        flex: 0 0 calc(50% - 30px) !important;
+        max-width: calc(50% - 30px) !important;
+        margin: 20px 0 !important;
     }
     
     .price .container {
@@ -344,11 +345,19 @@ body {
     
     .price-form {
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .price-input {
+        width: 100% !important;
+        max-width: 344px;
     }
     
     .price-image {
-        position: relative;
-        left: 0;
+        position: relative !important;
+        left: 0 !important;
         margin: 40px auto 0;
         display: block;
         max-width: 300px;
@@ -376,6 +385,7 @@ body {
     
     .sub-title {
         font-size: 40px;
+        text-align: center;
     }
     
     .main {
@@ -391,8 +401,9 @@ body {
     }
     
     .car-item {
-        flex: 0 0 100%;
-        max-width: 400px;
+        flex: 0 0 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
     }
     
     .car-item-info {
@@ -409,11 +420,7 @@ body {
     .button {
         width: 100%;
         max-width: 300px;
-    }
-    
-    .price-input {
-        width: 100%;
-        max-width: 344px;
+        margin: 0 auto;
     }
 }
 
@@ -437,11 +444,12 @@ body {
     
     .main-text {
         font-size: 15px;
+        padding: 0 10px;
     }
     
     .car-item-point {
-        flex: 0 0 calc(50% - 15px);
-        margin: 0 7px 15px;
+        flex: 0 0 calc(50% - 15px) !important;
+        margin: 0 7px 15px !important;
     }
     
     .car-item-point img {
@@ -454,6 +462,15 @@ body {
     
     .price-text {
         margin-bottom: 40px;
+        padding: 0 10px;
+    }
+    
+    .price-form {
+        width: 100%;
+    }
+    
+    .price-input {
+        width: 100% !important;
     }
 }
 
@@ -488,7 +505,21 @@ body {
     }
 }
 
-/* Гарантия 3 карточек на десктопе */
+/* Гарантия центрирования на всех устройствах */
+.car .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.car-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Исправления для десктопной версии */
 @media (min-width: 993px) {
     .car-items {
         justify-content: space-between;
@@ -500,10 +531,19 @@ body {
     }
 }
 
-/* Общие улучшения для адаптивности */
+/* Общие улучшения */
 img {
     max-width: 100%;
     height: auto;
+}
+
+/* Принудительное центрирование */
+.main-info,
+.price-form,
+.car-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Исправления для touch-устройств */
@@ -520,6 +560,7 @@ img {
         transform: none;
     }
 }
+
 
 
 
