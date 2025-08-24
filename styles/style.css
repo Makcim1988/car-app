@@ -498,27 +498,6 @@ body {
     color: #030305;
 }
 
-/* Адаптивность для мобильных устройств */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 960px;
-        padding: 0 15px;
-    }
-    
-    .menu {
-        margin-left: 100px;
-    }
-    
-    .menu-item {
-        margin-right: 50px;
-    }
-    
-    .price-image {
-        left: 300px;
-        max-width: 300px;
-    }
-}
-
 /* Адаптивность */
 @media (max-width: 1200px) {
     .container {
@@ -538,6 +517,16 @@ body {
     .price-image {
         left: 320px;
         max-width: 280px;
+    }
+    
+    /* 3 карточки в ряду на десктопе */
+    .car-items {
+        justify-content: space-between;
+    }
+    
+    .car-item {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
     }
 }
 
@@ -579,18 +568,16 @@ body {
         max-width: 100%;
     }
     
+    /* 2 карточки в ряду на планшетах */
     .car-items {
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
-        margin: 0 auto;
+        gap: 20px;
     }
     
     .car-item {
-        flex: 0 0 calc(50% - 30px);
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
         margin: 0;
-        max-width: 350px;
     }
     
     .price .container {
@@ -634,15 +621,15 @@ body {
         margin-bottom: 30px;
     }
     
+    /* 2 карточки в ряду на маленьких планшетах */
     .car-items {
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
     }
     
     .car-item {
-        flex: 0 0 100%;
-        max-width: 400px;
-        margin: 0 auto;
+        flex: 0 0 calc(50% - 15px);
+        max-width: calc(50% - 15px);
     }
     
     .car-item-info {
@@ -700,6 +687,18 @@ body {
         font-size: 28px;
     }
     
+    /* 1 карточка в ряду на мобильных */
+    .car-items {
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .car-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 15px 0;
+    }
+    
     .button {
         width: 100%;
         max-width: 300px;
@@ -729,32 +728,21 @@ body {
     }
 }
 
-/* ОСНОВНЫЕ ИСПРАВЛЕНИЯ ДЛЯ ЦЕНТРИРОВАНИЯ */
-.car {
-    padding: 100px 0;
-}
-
-.car .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* ОСНОВНЫЕ СТИЛИ ДЛЯ ДЕСКТОПА (больше 1200px) */
 .car-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 0;
     width: 100%;
-    margin: 0 auto;
+    margin: 40px 0 0 0;
 }
 
 .car-item {
-    flex: 0 0 calc(33.333% - 30px);
-    max-width: 384px;
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
     text-align: center;
-    margin: 0;
-    padding: 0;
+    margin: 0 0 40px 0;
 }
 
 /* Центрирование основного контента */
@@ -764,15 +752,15 @@ body {
 }
 
 .main-info {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: left;
+    display: block;
+    max-width: 855px;
 }
 
 .main-text {
-    text-align: center;
-    margin: 0 auto 40px auto;
+    text-align: justify;
+    margin: 0 0 40px 0;
+    max-width: 502px;
 }
 
 /* Мобильное меню */
@@ -783,25 +771,6 @@ body {
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        z-index: 1001;
-    }
-    
-    .menu-toggle span {
-        width: 100%;
-        height: 3px;
-        background-color: #030305;
-        transition: all 0.3s;
     }
     
     .menu {
@@ -846,44 +815,25 @@ body {
         cursor: pointer;
         z-index: 1002;
     }
-}
-
-/* Убеждаемся, что все элементы центрируются */
-body {
-    overflow-x: hidden;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* Исправление для карточек на больших экранах */
-@media (min-width: 993px) {
-    .car-items {
-        justify-content: space-between;
+    
+    /* Центрирование текста на мобильных */
+    .main-info {
+        text-align: center;
     }
     
+    .main-text {
+        text-align: center;
+    }
+}
+
+/* Гарантия 3 карточек на десктопе */
+@media (min-width: 1201px) {
     .car-item {
         flex: 0 0 calc(33.333% - 20px);
-        margin: 20px 0;
+        max-width: calc(33.333% - 20px);
     }
 }
 
-/* Гарантия центрирования на всех устройствах */
-@media (max-width: 992px) {
-    .car-item {
-        flex: 0 0 calc(50% - 30px);
-        margin: 15px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .car-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin: 15px 0;
-    }
-}
 
 
 
