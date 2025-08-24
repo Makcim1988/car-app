@@ -332,7 +332,7 @@ body {
     
     .main-text {
         margin: 0 auto 30px;
-        text-align: center;
+        text-align: left;
         max-width: 100%;
         padding: 0 15px;
     }
@@ -624,6 +624,7 @@ img {
 .car-item {
     max-width: 100%;
 }
+
 
 
 
