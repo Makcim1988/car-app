@@ -498,101 +498,207 @@ body {
     color: #030305;
 }
 
-/* Media Queries for Responsiveness */
-        @media (max-width: 992px) {
+ /* Media Queries */
+        /* Tablets */
+        @media (min-width: 768px) {
+            .main {
+                padding: 80px 0;
+            }
+            
             .main-title {
-                font-size: 2rem;
+                font-size: 50px;
+            }
+            
+            .car-item {
+                flex: 0 0 calc(33.333% - 20px);
+                max-width: calc(33.333% - 20px);
             }
             
             .sub-title {
-                font-size: 1.8rem;
-            }
-            
-            .car-items {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: #fff;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-            }
-            
-            .menu.active ul {
-                display: flex;
-            }
-            
-            .menu-item {
-                margin: 10px 0;
-                text-align: center;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .main {
-                padding: 60px 0;
-            }
-            
-            .main-title {
-                font-size: 1.8rem;
-            }
-            
-            .car, .price {
-                padding: 60px 0;
+                font-size: 45px;
             }
             
             .footer .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer .logo {
-                margin-bottom: 20px;
+                flex-direction: row;
+                justify-content: space-between;
             }
         }
 
-        @media (max-width: 576px) {
+        /* Desktop */
+        @media (min-width: 992px) {
             .header .container {
-                padding: 10px 15px;
+                justify-content: flex-start;
             }
             
-            .logo img {
-                height: 40px;
+            .menu {
+                margin-left: auto;
+            }
+            
+            .menu-item {
+                margin-right: 50px;
+            }
+            
+            .main {
+                padding: 104px 0 154px 0;
             }
             
             .main-title {
-                font-size: 1.5rem;
+                font-size: 80px;
+                margin-bottom: 40px;
             }
             
             .main-text {
-                font-size: 1rem;
+                margin-bottom: 40px;
+                max-width: 502px;
+            }
+            
+            .car {
+                padding: 100px 0;
             }
             
             .sub-title {
-                font-size: 1.5rem;
+                font-size: 60px;
+                line-height: 70px;
+                text-align: left;
+                margin-bottom: 40px;
             }
             
             .car-items {
-                grid-template-columns: 1fr;
+                justify-content: space-between;
+                gap: 0;
             }
             
-            .button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+            .car-item {
+                flex: 0 0 32%;
+                max-width: 384px;
+                margin-top: 40px;
+                padding: 0;
+                border: none;
+            }
+            
+            .car-item-point {
+                width: 110px;
+                height: 92px;
+                margin: 0 7.5px;
+            }
+            
+            .price .container {
+                padding-bottom: 121px;
+            }
+            
+            .price-text {
+                margin-bottom: 60px;
+                text-align: left;
             }
             
             .price-form {
-                padding: 0 15px;
+                max-width: 344px;
+            }
+            
+            .price-input {
+                padding: 22px 18px;
+                height: 65px;
+            }
+            
+            .price-image {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                max-width: 50%;
+                height: auto;
             }
         }
 
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .container {
+                padding: 0;
+            }
+            
+            .menu-item {
+                margin-right: 115px;
+            }
+            
+            .price-image {
+                left: 401px;
+                transform: none;
+            }
+        }
+
+        /* Mobile menu */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 20px 20px;
+                transition: right 0.3s ease;
+                z-index: 100;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+            
+            .menu.active {
+                right: 0;
+            }
+            
+            .menu ul {
+                flex-direction: column;
+            }
+            
+            .menu-item {
+                margin: 0 0 20px 0;
+            }
+            
+            .menu-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            
+            .main-action {
+                text-align: center;
+            }
+            
+            .car-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Very small devices */
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 32px;
+            }
+            
+            .sub-title {
+                font-size: 28px;
+            }
+            
+            .car-item-title {
+                font-size: 18px;
+            }
+            
+            .car-item-point {
+                flex: 0 0 calc(50% - 10px);
+            }
+            
+            .button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
