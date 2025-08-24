@@ -357,7 +357,7 @@ body {
     }
     
     .car-item-point {
-        width: 90px !important;
+        width: 70px !important;
         margin: 0 5px !important;
     }
     
@@ -627,6 +627,7 @@ img {
 .car-item {
     max-width: 100%;
 }
+
 
 
 
