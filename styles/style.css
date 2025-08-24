@@ -498,86 +498,79 @@ body {
     color: #030305;
 }
 
-/* Адаптивность */
+/* Адаптивность для мобильных устройств */
 @media (max-width: 1200px) {
     .container {
-        max-width: 1140px;
+        max-width: 960px;
         padding: 0 15px;
-        margin: 0 auto;
     }
     
     .menu {
-        margin-left: 80px;
+        margin-left: 120px;
+    }
+    
+    .menu-item {
+        margin-right: 60px;
+    }
+    
+    .price-image {
+        left: 320px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .menu {
+        margin-left: 0;
+        order: 3;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .menu ul {
+        justify-content: center;
     }
     
     .menu-item {
         margin-right: 40px;
     }
     
-    .price-image {
-        left: 320px;
-        max-width: 280px;
-    }
-    
-    /* 3 карточки в ряду на десктопе */
-    .car-items {
-        justify-content: space-between;
-    }
-    
-    .car-item {
-        flex: 0 0 calc(33.333% - 20px);
-        max-width: calc(33.333% - 20px);
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        max-width: 960px;
-        padding: 0 15px;
-    }
-    
-    .header .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .menu {
-        margin-left: 0;
-    }
-    
-    .menu ul {
-        justify-content: flex-end;
+    .menu-item:last-child {
+        margin-right: 0;
     }
     
     .main {
-        padding: 80px 0;
+        padding: 60px 0;
         text-align: center;
     }
     
     .main-info {
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     
     .main-text {
-        margin: 0 auto 40px auto;
+        margin: 0 auto 30px;
         text-align: center;
-        max-width: 100%;
     }
     
-    /* 2 карточки в ряду на планшетах */
     .car-items {
         justify-content: center;
-        gap: 20px;
+        gap: 30px;
     }
     
     .car-item {
-        flex: 0 0 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-        margin: 0;
+        flex: 0 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        margin-top: 30px;
     }
     
     .price .container {
@@ -586,9 +579,6 @@ body {
     
     .price-form {
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     
     .price-image {
@@ -598,241 +588,184 @@ body {
         display: block;
         max-width: 300px;
     }
+    
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
-        max-width: 720px;
+        max-width: 540px;
+    }
+    
+    .header {
+        padding: 15px 0;
+    }
+    
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
     
     .menu-item {
-        margin-right: 20px;
+        margin-right: 0;
     }
     
     .main-title {
-        font-size: 48px;
-        text-align: center;
+        font-size: 50px;
     }
     
     .sub-title {
-        font-size: 36px;
-        text-align: center;
+        font-size: 40px;
         line-height: 1.2;
-        margin-bottom: 30px;
-    }
-    
-    /* 2 карточки в ряду на маленьких планшетах */
-    .car-items {
-        justify-content: center;
-        gap: 15px;
     }
     
     .car-item {
-        flex: 0 0 calc(50% - 15px);
-        max-width: calc(50% - 15px);
+        flex: 0 0 100%;
+        max-width: 400px;
     }
     
     .car-item-info {
-        flex-wrap: nowrap;
-        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
     }
     
     .car-item-point {
-        flex: 0 0 auto;
-        margin: 0 10px;
+        flex: 0 0 calc(33.333% - 10px);
+        margin: 0 5px;
     }
     
     .price-input {
         width: 100%;
-        max-width: 344px;
     }
 }
 
 @media (max-width: 576px) {
     .container {
-        max-width: 100%;
         padding: 0 15px;
-    }
-    
-    .header .container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
     }
     
     .menu ul {
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        gap: 10px;
-    }
-    
-    .menu-item {
-        margin: 0;
-        width: 100%;
-        text-align: center;
+        gap: 15px;
     }
     
     .main-title {
-        font-size: 32px;
-    }
-    
-    .main-text {
-        text-align: center;
-        margin: 0 auto 30px;
-        padding: 0 10px;
+        font-size: 36px;
     }
     
     .sub-title {
-        font-size: 28px;
-    }
-    
-    /* 1 карточка в ряду на мобильных */
-    .car-items {
-        justify-content: center;
-        gap: 0;
-    }
-    
-    .car-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin: 15px 0;
+        font-size: 30px;
     }
     
     .button {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        padding: 15px;
     }
     
     .car-item-point {
         flex: 0 0 calc(50% - 10px);
-        margin: 5px;
-        text-align: center;
+        margin-bottom: 15px;
     }
     
     .car-item-point img {
         max-width: 30px;
-        margin: 0 auto 8px;
-        display: block;
     }
     
-    .price-image {
-        max-width: 250px;
+    .price-text {
+        margin-bottom: 30px;
     }
     
-    .footer .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+    .rights {
+        font-size: 14px;
     }
 }
 
-/* ОСНОВНЫЕ СТИЛИ ДЛЯ ДЕСКТОПА (больше 1200px) */
-.car-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0;
-    width: 100%;
-    margin: 40px 0 0 0;
+/* Мобильное меню для маленьких экранов */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 32px;
+    }
+    
+    .sub-title {
+        font-size: 26px;
+    }
+    
+    .main {
+        padding: 40px 0;
+    }
+    
+    .car {
+        padding: 60px 0;
+    }
+    
+    .car-item-title {
+        font-size: 20px;
+    }
+    
+    .car-item-point {
+        width: 90px;
+        height: auto;
+    }
+    
+    .car-item-point > div {
+        font-size: 14px;
+    }
 }
 
-.car-item {
-    flex: 0 0 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    text-align: center;
-    margin: 0 0 40px 0;
+/* Исправления для touch-устройств */
+@media (hover: none) {
+    .button:hover {
+        background: #030305;
+    }
+    
+    .menu-item a:hover {
+        border-bottom: none;
+    }
+    
+    .car-item-image:hover img {
+        transform: none;
+    }
 }
 
-/* Центрирование основного контента */
-.main .container {
-    display: flex;
-    justify-content: center;
+/* Общие улучшения для адаптивности */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.main-info {
-    text-align: left;
-    display: block;
-    max-width: 855px;
-}
-
-.main-text {
-    text-align: justify;
-    margin: 0 0 40px 0;
-    max-width: 502px;
-}
-
-/* Мобильное меню */
-.menu-toggle {
-    display: none;
-}
-
+/* Улучшение читаемости на маленьких экранах */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    
-    .menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        padding: 80px 20px 20px;
-        transition: right 0.3s ease;
-        z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        margin: 0;
-    }
-    
-    .menu.active {
-        right: 0;
-    }
-    
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        gap: 30px;
-    }
-    
-    .menu-item {
-        margin: 0;
-        text-align: center;
-    }
-    
-    .menu-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 28px;
-        cursor: pointer;
-        z-index: 1002;
-    }
-    
-    /* Центрирование текста на мобильных */
-    .main-info {
-        text-align: center;
+    body {
+        font-size: 14px;
     }
     
     .main-text {
-        text-align: center;
+        font-size: 15px;
+    }
+    
+    .price-input {
+        font-size: 16px; /* Увеличиваем для удобства ввода на мобильных */
     }
 }
 
-/* Гарантия 3 карточек на десктопе */
-@media (min-width: 1201px) {
-    .car-item {
-        flex: 0 0 calc(33.333% - 20px);
-        max-width: calc(33.333% - 20px);
+/* Портретная ориентация на мобильных */
+@media (max-height: 500px) and (max-width: 768px) {
+    .main {
+        padding: 30px 0;
+    }
+    
+    .car {
+        padding: 40px 0;
     }
 }
+
 
 
 
