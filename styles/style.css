@@ -353,7 +353,7 @@ body {
     
     .car-item-info {
         flex-wrap: nowrap !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
     }
     
     .car-item-point {
@@ -445,7 +445,6 @@ body {
     .car-item-point {
         width: 80px !important;
         margin: 0 3px !important;
-        flex: none !important;
     }
     
     .car-item-point img {
@@ -628,6 +627,7 @@ img {
 .car-item {
     max-width: 100%;
 }
+
 
 
 
