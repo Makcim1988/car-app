@@ -357,7 +357,6 @@ body {
     }
     
     .car-item-point {
-        width: 70px !important;
         margin: 0 5px !important;
     }
     
@@ -443,7 +442,6 @@ body {
     }
     
     .car-item-point {
-        width: 80px !important;
         margin: 0 3px !important;
     }
     
@@ -554,7 +552,6 @@ body {
     
     .car-item-point {
         flex: 0 0 calc(33.333% - 5px) !important;
-        min-width: 60px;
     }
     
     .car-item-point > div {
@@ -627,6 +624,7 @@ img {
 .car-item {
     max-width: 100%;
 }
+
 
 
 
